@@ -5,13 +5,12 @@ import os
 import openai
 
 load_dotenv()
-#openai.api_key = os.getenv('OPENAI_API_KEY')
-openai.api_key = "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"
+openai.api_key = os.getenv('OPENAI_API_KEY')
 completion = openai.Completion()
 
-start_sequence = "\nSyndrum:"
+start_sequence = "\nJabe:"
 restart_sequence = "\n\nPerson"
-session_prompt = "You are talking with Syndrum, GPT3 bot influencer who was very inteligent about new technology and programing. Syndrum owned by Sayuru. He is a software engineer.You can ask anything from syndrum"
+session_prompt = "Lets begin by introducing yourself."
 
 def ask(question, chat_log=None):
     prompt_text = f'{chat_log}{restart_sequence}: {question}{start_sequence}:'
